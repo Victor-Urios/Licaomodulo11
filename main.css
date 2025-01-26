@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+/* Padrão de todo site atual  */
+
+html{
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* o container o tamanho maximo dele vai ser 1024px.  */
+
+.container h2 {
+    border-bottom: 2px;
+    margin-bottom: 25px;
+}
+
+/* container do h2 o margin e o border */
+
+header .container,
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* os itens dentro do container do header e do footer vai estar centralizados com espaço entre eles  */
+
+footer {
+    margin-top: 16px;
+}
+
+/* margem do footer */
+
+.container-flex {
+    display: flex;
+}
+
+/* display flex pra todos dentro do container pra n ter que ficar adicionando toda hora display:flex em cada momento do código  */
+
+header,
+footer {
+    background-color: limegreen;
+    padding-top: 16px;
+    color: #fff;
+}
+
+/* coloração do header e do footer  */
+
+form input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Input da pesquisa */
+
+#carousel-imagens img {
+    max-width: 1920px;
+    max-height: 400px;
+}
+
+form button {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(0, 156, 96);
+    color: #fff;
+}
+
+/* botãozinho de pesquizar */
+
+.menu>li {
+    list-style: none;
+    float: left;
+    margin-right: 10px;
+}
+
+/* tudo aqui que esta no menu vai sobrepor o Li assim nao tem que ficar fazendo malabarismo  */
+
+nav li a {
+    text-decoration: none;
+    color: #2f00ff;
+    font-size: 2em;
+}
+
+#sobre-a-loja img {
+    max-width: 550px;
+    margin-right: 20px;
+}
+
+/* tamanho max da imagem da loja ( derp ) */
+
+
+#sobre-a-loja p {
+    font-size: 19px;
+}
+
+/* tamanho de fonte */
+
+#sobre-a-loja h2 {
+    max-width: 100%;
+}
+
+section {
+    padding: 48px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.artigos {
+    max-width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    column-gap: 2%;
+    row-gap: 3%;
+    text-align: center;
+}
+
+/* aqui é feito uma coluna assim os artigos de vendas ficam dentro da caixa de um jeito uniforme e facil pro usuário acessar  */
+
+.artigos article {
+    padding: 5px;
+    box-shadow: 3px 3px 5px 3px #cacaca;
+    border-radius: 8px;
+}
+
+/* um efeitinho de shadow  */
+
+.artigos img {
+    min-width: 320px;
+    min-height: 320px;
+    max-width: 320px;
+    max-height: 320px;
+}
+
+/* tamanho maximo das imagens hard-codado justamente pra elas terem este > exato < tamanho  */
+
+.artigos p {
+    margin-bottom: 5px;
+}
+
+.artigos button {
+    padding: 5px;
+    background-color: rgb(0, 81, 255);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+}
+
+/* corzinha classica do botão mais umas coisas a mais  */
+
+footer { 
+    margin-top: 128px;
+}
+
+footer li {
+    list-style: none;
+    margin-left: 16px;
+}
+
+footer li img {
+    height: 32px;
+}
+
+/* Toda estrutura para celulares abaixo por boas práticas sempre começamos por aqui*/
+
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 90%;
+        flex-direction: column;
+    }
+
+    #carousel-imagens img {
+        min-height: 281.25px;
+    }
+
+    form {
+        margin-top: 12px;
+    }
+
+    .artigos {
+        display: block;
+    }
+
+    .artigos .produtos {
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .botao-menu {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .botao-menu button {
+        padding: 8px;
+        border: none;
+        border-radius: 6px;
+        background-color: rgb(0, 81, 255);
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .botao-menu :hover {
+        background-color: #9b9b9b;
+    }
+
+}
+
+/* Toda estrutura para tablets abaixo segundo item da nossa categoria dps dos celulares */
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    form {
+        margin-top: 12px;
+    }
+
+    .artigos {
+        grid-template-columns: repeat(2, 49%);
+    }
+
+    .artigos .produtos {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    #sobre-a-loja img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+    }
+
+    .botao-menu {
+        display: none;
+    }
+
+    .menu {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+}
+
+/* Por fim estrutura para o desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .botao-menu {
+        display: none;
+    }
+
+    .menu {
+        margin-top: 16px;
+
+    }
+
+}
